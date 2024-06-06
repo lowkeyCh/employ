@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.du3.ccisp.mapper.UserMapper">
+    <resultMap id="userMap" type="org.du3.ccisp.pojo.User">
+        <result column="user_id" property="userId"></result>
+        <result column="user_name" property="userName"></result>
+        <result column="user_password" property="userPassword"></result>
+        <result column="user_identity" property="userIdentity"></result>
+    </resultMap>
+
+    <insert id="add" parameterType="User">
+        insert into ccis.user(user_name, user_password, user_identity)
+            values (#{userName}, #{userPassword}, #{userIdentity});
+    </insert>
+
+    <delete id="delete" parameterType="Integer">
+        delete from ccis.user where user_id = #{userId};
+    </delete>
+
+    <update id="update" parameterType="User">
+        update ccis.user
+            set user_name = #{userName}, user_password = #{userPassword}, user_identity = #{userIdentity}
+                where user_id = #{userId};
+    </update>
+
+    <select id="queryById" parameterType="Integer" resultType="User" resultMap="userMap">
+        select *
+            from ccis.user where user_id = #{userId};
+    </select>
+
+    <select id="queryAll" resultType="User" resultMap="userMap">
+        select *
+            from ccis.user;
+    </select>
+
+</mapper>
