@@ -10,11 +10,17 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    /**
+    /**已使用
      * 增加一条数据
      * @param user 数据
      */
     void add(User user);
+
+    /**已使用
+     * 匹配一条数据
+     * @param user 数据
+     */
+    User match(User user);
 
     /**
      * 删除一条数据

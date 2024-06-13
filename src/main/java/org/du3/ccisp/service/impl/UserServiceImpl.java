@@ -20,6 +20,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User match(User user) {
+        return userMapper.match(user);
+    }
+
+    @Override
     public void delete(Integer userId) {
         userMapper.delete(userId);
     }

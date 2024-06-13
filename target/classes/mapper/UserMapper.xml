@@ -26,8 +26,16 @@
                 where user_id = #{userId};
     </update>
 
-    <select id="queryById" parameterType="Integer" resultType="User">
-        select user_id as userId, user_name as userName, user_password as userPassword, user_identity as userIdentity
+    <select id="match" parameterType="User" resultType="User" resultMap="userMap">
+        select *
+        from ccis.user
+         where user_name = #{userName}
+           and user_password = #{userPassword}
+           and user_identity = #{userIdentity};
+    </select>
+
+    <select id="queryById" parameterType="Integer" resultType="User" resultMap="userMap">
+        select *
             from ccis.user where user_id = #{userId};
     </select>
 

@@ -5,11 +5,9 @@ import org.du3.ccisp.pojo.User;
 import java.util.List;
 
 public interface UserService {
-    /**
-     * 增加一条数据
-     * @param user 数据
-     */
     void add(User user);
+
+    User match(User user);
 
     /**
      * 删除一条数据

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin
 //@Controller 控制层需要的注解
 //@RestController 使用这个也是可以的，但是使用后他里面所有请求返回的都是字符串！
 //一般只需要作为接口放回JSON格式数据的话推荐使用@RestController
@@ -44,11 +45,19 @@ public class UserController {
 
     //post请求
     //@RequestBody 表示接收请求是JSON格式的数据
-    @PostMapping
+    @PostMapping("/register")
     @ResponseBody
     public String add(@RequestBody User user){
         userService.add(user);
         return "添加OK";
+    }
+
+    //post请求
+    //@RequestBody 表示接收请求是JSON格式的数据
+    @PostMapping("/login")
+    @ResponseBody
+    public String login(@RequestBody User user){
+        return JSON.toJSONString(userService.match(user));
     }
 
     //Delete请求
