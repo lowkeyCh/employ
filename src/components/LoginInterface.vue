@@ -260,25 +260,30 @@
   import * as THREE from 'three'
   import Waves from 'vanta/src/vanta.waves';
   import { useUserStore } from '@/store/user'
-
   export default {
-    provide() {
-
-    },
+    /**
+     * 挂载前访问本地存储的登录信息
+     */
     beforeMount() {
       //用户登录信息持久化处理 sessionStorage中如果有登录信息则直接跳转
       let userInfo = JSON.parse(localStorage.getItem("user"))
       if(userInfo != null) {
         //跳转到对应的界面去
-        if(userInfo.user.userIdentity != null) {
+        if(userInfo.user.userIdentity == "管理员") {
           this.$router.push('/ManagerIndex')
         } else if(userInfo.user.userIdentity == "企业") {
           this.$router.push('/EnterpriseIndex');
         } else if(userInfo.user.userIdentity == "学生") {
           this.$router.push('/GraduateIndex');
+          this.$router.push('/GraduateStudent')
         }
       }
     },
+
+
+    /**
+     * 挂载时将将要显示的界面相关信息赋值
+     */
     mounted() {
       this.vantaEffect = Waves({
           el:this.$refs.vantaRef,
@@ -296,11 +301,18 @@
           color: 0x282e36
       })
     },
+
+
+    /**
+     * 销毁前将界面手动销毁
+     */
     beforeDestroy() {
       if(this.vantaEffect){
           this.vantaEffect.destroy()
       }
     },
+
+
     data() {
       return {
         overlaylong: 'overlaylong',
@@ -309,11 +321,13 @@
         radio: 3,   //身份变量 3表示管理员 6表示企业 9表示学生
 
         login : {   //用户登录信息
+          userId: '',
           userName: '',
           userPassword: '',
           userIdentity: '',
         },
         logup : {   //用户注册信息
+          userId: '',
           userName: '',
           userPassword: '',
           userIdentity: '',
@@ -356,7 +370,7 @@
 
             //存储用户信息 登录信息 持久化处理
             const store = new useUserStore()
-            store.setUser(this.login)
+            store.setUser(res.data)
 
             //跳转到对应的界面去
             if(this.login.userIdentity == "管理员") {
@@ -365,6 +379,7 @@
               this.$router.push('/EnterpriseIndex');
             } else if(this.login.userIdentity == "学生") {
               this.$router.push('/GraduateIndex');
+              this.$router.push('/GraduateStudent')
             }
           } else {
             this.$message({ message: '账号密码身份错误', type: 'warning'})
@@ -383,21 +398,29 @@
           this.logup.userIdentity = "学生"
         }
 
-        this.$axios.post('http://localhost:8081/user/register', this.logup).then(res=>{
+        this.$axios.post('http://localhost:8081/user/register', this.logup).then(res1=>{
           //判断是否添加成功并返回对应信息
-          if(res.data == "添加OK") {
+          if(res1.data == "添加OK") {
             this.$message({ message: '注册成功', type: 'success'})
 
-            //存储用户信息 登录信息 持久化处理
-            const store = new useUserStore()
-            store.setUser(this.logup)
+            this.$axios.post('http://localhost:8081/user/login', this.logup).then(res2=>{
+              //登陆成功与登陆失败
+              if(res2.data != null) {
+                this.$message({ message: '登录成功', type: 'success'})
 
-            //跳转到对应的界面去
-            if(this.logup.userIdentity == "企业") {
-              this.$router.push('/EnterpriseIndex');
-            } else if(this.logup.userIdentity == "学生") {
-              this.$router.push('/GraduateIndex');
-            }
+                //存储用户信息 登录信息 持久化处理
+                const store = new useUserStore()
+                store.setUser(res2.data)
+
+                //跳转到对应的界面去
+                if(this.logup.userIdentity == "企业") {
+                  this.$router.push('/EnterpriseIndex');
+                } else if(this.logup.userIdentity == "学生") {
+                  this.$router.push('/GraduateIndex');
+                  this.$router.push('/GraduateStudent')
+                }
+              }
+            })
           }
         })
       },

@@ -43,29 +43,29 @@ export default {
       location.reload()
     }
   },
-    data() {
-        return {
-          input: '',
-          userName: 'Loading'
-        }
-    },
-    methods:{
-      /**
-       * 退出登录
-       */
-      toHome(){
-        this.$router.push('/')
-
-        //移除用户登录持久化信息
-        localStorage.removeItem("user");
-      },
-
-      /**
-       * 个人中心
-       */
-      toPersonal() {
-        this.$router.push('/personal_xs')
+  data() {
+      return {
+        input: '',
+        userName: 'Loading'
       }
+  },
+  methods:{
+    /**
+     * 退出登录
+     */
+    toHome(){
+      this.$router.push('/')
+
+      //移除用户登录持久化信息
+      localStorage.removeItem("user");
+    },
+
+    /**
+     * 个人中心
+     */
+    toPersonal() {
+      this.$router.push('/personal_xs')
     }
+  }
 }
 </script>

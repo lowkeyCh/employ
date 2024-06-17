@@ -9,7 +9,6 @@ import * as echarts from 'echarts';
 import { createPinia } from 'pinia'
 import piniaPersist from 'pinia-plugin-persist'
 
-
 // 引入pinia 与其插件
 const pinia = createPinia()
 Vue.use(pinia)
@@ -23,7 +22,10 @@ Vue.config.productionTip = false;
 Vue.use(router);
 Vue.use(ElementUI);
 
+
 new Vue({
     render: h => h(App),
     router
 }).$mount('#app')
+
+

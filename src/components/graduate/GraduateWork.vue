@@ -149,11 +149,9 @@
 
 <script>
 export default {
-  name:"SysAdmin",
   mounted(){
-    this.initSys();
   },
-  data(){
+  data() {
     return{
       demand:"应届生 3年工作经验",
       reward:"12-14k 16薪 包吃包住 早九晚五 双休",
@@ -162,17 +160,9 @@ export default {
       info:"公司非常伟大",
       url:"https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
       value1:true,
-      work:"Java开发工程师",
-      initSys(){
-        this.getRequest().then(resp=>{
-          if(resp){
-            return null;
-          }
-        });
-      }
+      work:"Java开发工程师"
     }
   }
-
 }
 </script>
 
