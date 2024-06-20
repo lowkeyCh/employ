@@ -23,10 +23,6 @@ import ManagerHeader from "@/components/manager/ManagerHeader.vue";
 
 export default {
     components: {ManagerAside, ManagerHeader},
-
-    methods: {
-
-    }
 };
 </script>
 
