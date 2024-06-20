@@ -21,6 +21,7 @@
         this.graduate.userId = res.data.userId
         this.graduate.graduatePhone = res.data.graduatePhone
         this.graduate.graduateEmail = res.data.graduateEmail
+        this.graduate.graduateQualificationCheck = res.data.graduateQualificationCheck
 
         this.graduateModify.graduateId = res.data.graduateId
         this.graduateModify.graduateName = res.data.graduateName
@@ -33,16 +34,23 @@
         this.graduateModify.userId = res.data.userId
         this.graduateModify.graduatePhone = res.data.graduatePhone
         this.graduateModify.graduateEmail = res.data.graduateEmail
+        this.graduateModify.graduateQualificationCheck = res.data.graduateQualificationCheck
       })
     },
 
     data() {
       return {
+        /**
+         * 页面展示数据 用于信息界面与修改界面的切换
+         */
         show: {
           showCard: true,
           modifyCard: false,
         },
 
+        /**
+         * 毕业生个人基本信息
+         */
         graduate: {
           graduateId: 0,
           graduateName: '',
@@ -55,8 +63,12 @@
           userId: 0,
           graduatePhone: '',
           graduateEmail: '',
+          graduateQualificationCheck: '',
         },
 
+        /**
+         * 修改毕业生个人基本信息
+         */
         graduateModify: {
           graduateId: 0,
           graduateName: '',
@@ -69,6 +81,7 @@
           userId: 0,
           graduatePhone: '',
           graduateEmail: '',
+          graduateQualificationCheck: '',
         }
       }
     },
@@ -95,7 +108,7 @@
         this.graduateModify.graduateSex       = this.graduate.graduateSex
         this.graduateModify.graduateBirthday  = this.graduate.graduateBirthday
         this.graduateModify.graduateCollege   = this.graduate.graduateCollege
-        this.graduateModify.graduateGraduate  = this.graduate.graduateGraduate
+        this.graduateModify.graduateGraduateDate  = this.graduate.graduateGraduateDate
         this.graduateModify.graduateMajor     = this.graduate.graduateMajor
         this.graduateModify.userId            = this.graduate.userId
         this.graduateModify.graduatePhone     = this.graduate.graduatePhone
@@ -119,7 +132,7 @@
           this.graduate.graduateSex      = this.graduateModify.graduateSex
           this.graduate.graduateBirthday = this.graduateModify.graduateBirthday
           this.graduate.graduateCollege  = this.graduateModify.graduateCollege
-          this.graduate.graduateGraduate = this.graduateModify.graduateGraduate
+          this.graduate.graduateGraduateDate = this.graduateModify.graduateGraduateDate
           this.graduate.graduateMajor    = this.graduateModify.graduateMajor
           this.graduate.userId           = this.graduateModify.userId
           this.graduate.graduatePhone    = this.graduateModify.graduatePhone
@@ -135,7 +148,7 @@
     <el-card v-show="show.showCard">
       <el-descriptions class="margin-top" title="毕业生基本资料" :column="2" border>
         <template slot="extra">
-          <el-button type="primary"  size="medium" @click="modify">修改资料</el-button>
+          <el-button class="button" type="primary"  size="medium" @click="modify">修改资料</el-button>
         </template>
 
 
@@ -144,7 +157,7 @@
             <svg t="1718477379784" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11215" width="32" height="32"><path d="M512 447.223c-88.224 0-160-71.776-160-160s71.776-160 160-160c88.225 0 160 71.776 160 160s-71.775 160-160 160z m0-256c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zM454.901 870.594c-96.594 0-184.933-3.802-231.263-49.955C203.308 800.386 193 774.164 193 742.701c0-31.629 10.247-62.812 30.457-92.686 17.978-26.573 42.908-50.741 74.098-71.833C359.256 536.46 437.418 512.53 512 512.53c74.55 0 152.55 23.943 214.002 65.691 31.05 21.094 55.861 45.273 73.746 71.867C819.822 679.937 830 711.096 830 742.701c0 31.552-10.317 57.827-30.664 78.097-50.714 50.521-151.822 50.128-258.88 49.723a7395.45 7395.45 0 0 0-56.914-0.001c-9.605 0.037-19.163 0.074-28.641 0.074zM512 806.447c9.567 0 19.149 0.037 28.701 0.073 49.52 0.191 96.284 0.37 135.808-4.396 38.418-4.633 64.546-13.604 77.659-26.668 5.079-5.06 11.832-13.96 11.832-32.755 0-38.089-27.688-78.744-75.963-111.54C638.933 596.442 574.04 576.53 512 576.53c-126.309 0-255 83.862-255 166.171 0 18.675 6.738 27.547 11.807 32.596 32.045 31.922 128.975 31.55 214.491 31.224 9.556-0.037 19.139-0.074 28.702-0.074z" fill="" p-id="11216"></path></svg>
             <label style="font-weight: bolder; font-size: large"> 毕业生姓名</label>
           </template>
-          {{ graduate.graduateName }}
+          <label class="show">{{ graduate.graduateName }}</label>
         </el-descriptions-item>
 
 
@@ -226,10 +239,10 @@
     <el-card v-show="show.modifyCard">
       <el-descriptions class="margin-top" title="毕业生基本资料" :column="2" border>
         <template slot="extra">
-          <el-button type="danger"  size="medium" @click="modifyBack">取消更改</el-button>
+          <el-button class="button" type="danger"  size="medium" @click="modifyBack">取消更改</el-button>
         </template>
         <template slot="extra">
-          <el-button type="success"  size="medium" @click="modifySave">保存更改</el-button>
+          <el-button class="button" type="success"  size="medium" @click="modifySave">保存更改</el-button>
         </template>
 
 
@@ -318,8 +331,6 @@
       </el-descriptions>
     </el-card>
   </div>
-
-
 </template>
 
 <style scoped>
@@ -331,9 +342,18 @@
     background-color: #B3C0D1;
   }
 
-  .input:hover {
-    background-color: #B3C0D1;
+  .show {
+
+  }
+  .show:hover {
   }
 
+  .button {
 
+  }
+
+  .button:hover {
+    color: black;
+    border: 1px solid #000;
+  }
 </style>

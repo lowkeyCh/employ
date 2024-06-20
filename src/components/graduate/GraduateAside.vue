@@ -16,10 +16,10 @@ export default {
              router
              default-active="/GraduateStudent"
     >
-        <el-menu-item index="/GraduateStudent"><i class="el-icon-notebook-1"></i>学生基本信息</el-menu-item>
-        <el-menu-item index="/GraduateResumeDelivery"><i class="el-icon-s-marketing"></i>简历投递情况</el-menu-item>
-        <el-menu-item index="/GraduateResumeDetails"><i class="el-icon-cpu"></i>简历查看</el-menu-item>
-        <el-menu-item index="/GraduateWork"><i class="el-icon-ship"></i>找工作</el-menu-item>
+      <el-menu-item index="/GraduateStudent"><i class="el-icon-notebook-1"></i>学生基本信息</el-menu-item>
+      <el-menu-item index="/GraduateResumeDetails"><i class="el-icon-cpu"></i>毕业资格上传</el-menu-item>
+      <el-menu-item index="/GraduateWork"><i class="el-icon-ship"></i>找工作</el-menu-item>
+      <el-menu-item index="/GraduateResumeDelivery"><i class="el-icon-s-marketing"></i>简历投递情况</el-menu-item>
     </el-menu>
 </template>
 

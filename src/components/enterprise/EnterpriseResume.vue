@@ -1,133 +1,303 @@
 <script>
   export default {
-    name:"MyResume",
-    methods: {
-      handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
-      },
-      handleCurrentChange(val) {
-        console.log(`当前页: ${val}`);
-        this.pageNum=val
+    mounted() {
+      /**
+       * 获取用户id
+       */
+      let userId = JSON.parse(localStorage.getItem("user")).user.userId
 
-      }
+      /**
+       * 根据用户id获取企业基本信息
+       */
+      this.$axios.get('http://localhost:8081/enterprise/query?userId='+ userId).then(res=>{
+        this.enterprise.enterpriseId = res.data.enterpriseId
+        this.enterprise.enterpriseName = res.data.enterpriseName
+        this.enterprise.enterpriseRegistrationPlace = res.data.enterpriseRegistrationPlace
+        this.enterprise.enterpriseRegisteredCapital = res.data.enterpriseRegisteredCapital
+        this.enterprise.enterpriseLegalRepresentative = res.data.enterpriseLegalRepresentative
+        this.enterprise.enterpriseFoundingDate = res.data.enterpriseFoundingDate
+        this.enterprise.enterpriseEmail = res.data.enterpriseEmail
+        this.enterprise.enterpriseCoreBusiness = res.data.enterpriseCoreBusiness
+        this.enterprise.userId = res.data.userId
+        this.enterprise.enterpriseQualificationsCheck = res.data.enterpriseQualificationsCheck
+
+        /**
+         * 分析用户审核状态 同时更新显示按钮状态 同时更新是否能够上传
+         */
+        if(this.enterprise.enterpriseQualificationsCheck == "未审核") {
+          this.buttonShow.processShow = true
+          this.buttonShow.successShow = false
+          this.buttonShow.failShow = false
+          //能上传
+          this.isUpload = false
+        } else if(this.enterprise.enterpriseQualificationsCheck == "审核成功") {
+          this.buttonShow.processShow = false
+          this.buttonShow.successShow = true
+          this.buttonShow.failShow = false
+          //不能上传
+          this.isUpload = true
+        } else {
+          this.buttonShow.processShow = false
+          this.buttonShow.successShow = false
+          this.buttonShow.failShow = true
+          //能上传
+          this.isUpload = false
+        }
+
+        /**
+         * 根据企业id获取企业用人资料相关信息
+         */
+        this.$axios.get('http://localhost:8081/eq/query_by_enterprise_id?enterpriseId='+ this.enterprise.enterpriseId).then(res=>{
+          for(let i = 0; i < res.data.length; i++) {
+            this.enterpriseQualifications[i] = {
+              enterpriseId: res.data[i].enterpriseId,
+              eqId: res.data[i].eqId,
+              eqIndex: res.data[i].eqIndex,
+            }
+          }
+
+          /**
+           * 将获取的毕业资料地址赋值fileList
+           */
+          for(let i = 0; i < res.data.length; i++) {
+            this.fileList[i] = {
+              name: "" + this.enterpriseQualifications[i].eqId,
+              url: "http://localhost:8081/" + this.enterpriseQualifications[i].eqIndex,
+            }
+          }
+
+          /**
+           * 重新渲染el-upload
+           */
+          // 移除组件
+          this.qualificationsShow = false
+          // 在组件移除后，重新渲染组件
+          // this.$nextTick可实现在DOM 状态更新后，执行传入的方法。
+          this.$nextTick(() => {
+            this.qualificationsShow = true
+          })
+        })
+      })
+
+
     },
+
+    methods: {
+      /**
+       * 文件上传自定义接口
+       * @param param
+       */
+      upload(param) {
+        /**
+         * 将文件转换为表单格式
+         */
+        let formDataFile = new FormData();
+        formDataFile.append('file', param.file);
+
+        /**
+         * 上传文件并返回文件后端地址
+         */
+        this.$axios.post('http://localhost:8081/file/upload_resume', formDataFile).then(res=>{
+          /**
+           * 将新上传的文件存放金fileList中
+           */
+          this.fileList[this.fileList.length] = {name: res.data, url: "http://localhost:8081/" + res.data}
+          this.enterpriseQualifications[this.enterpriseQualifications.length] = {eqIndex: res.data}
+
+          /**
+           * 重新渲染el-upload
+           */
+          // 移除组件
+          this.qualificationsShow = false
+          // 在组件移除后，重新渲染组件
+          // this.$nextTick可实现在DOM 状态更新后，执行传入的方法。
+          this.$nextTick(() => {
+            this.qualificationsShow = true
+          })
+
+          /**
+           * 将新上传的毕业资料相关信息添加至数据库中
+           */
+          this.$axios.post('http://localhost:8081/eq/add', {
+            enterpriseId: this.enterprise.enterpriseId,
+            eqIndex: res.data,
+          }).then(res=>{
+            if(res.data == "上传成功")
+              this.$message({ message: '上传成功', type: 'success'})
+          })
+        })
+
+
+      },
+
+      /**
+       * 移除文件
+       * @param file
+       */
+      handleRemove(file) {
+        /**
+         * 遍历fileList找到当前元素
+         */
+        for(let i = 0; i != this.fileList.length; ++i) {
+          /**
+           * 根据url进行匹配 匹配成功后从fileList中移除file
+           */
+          if(file.url == this.fileList[i].url) {
+            /**
+             * 删除后端数据库中的元素
+             */
+            this.$axios.get('http://localhost:8081/eq/delete_by_eq_index?eqIndex='+ this.enterpriseQualifications[i].eqIndex).then(res=>{
+              if(res.data == "删除成功")
+                this.$message({ message: '删除成功', type: 'success'})
+            })
+
+            /**
+             * 删除fileList与enterpriseQualifications中的数据
+             */
+            this.fileList.splice(i, 1)
+            this.enterpriseQualifications.splice(i, 1)
+          }
+        }
+
+      },
+
+      /**
+       * 预览文件
+       * @param file
+       */
+      handlePictureCardPreview(file) {
+        this.preview.previewDialog = true;
+        this.preview.previewImageUrl = file.url;
+      },
+    },
+
+
     data() {
       return {
-        pageSize:10,
-        pageNum:1,
-        total:0,
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          school: '清华大学',
-          time: '2年',
-          point:'在职',
-          department: '南岸',
-          zip: 200333
-        }, {
-          date: '2016-05-04',
-          name: '文远彬',
-          school: '北京大学',
-          time: '1年',
-          point:'在职',
-          department: '南岸',
-          zip: 200333
-        }, {
-          date: '2016-05-01',
-          name: '张三',
-          school: '交职院',
-          time: '3年',
-          point:'在职',
-          department: '双福',
-          zip: 200333
-        }, {
-          date: '2016-05-03',
-          name: '李四',
-          school: '重庆交通大学',
-          time: '刚入职',
-          department: '双福',
-          point:'已离职',
-          zip: 200333
-        }]
+        fileList: [],
+
+        qualificationsShow: 'true',
+
+        isUpload: true,
+
+        /**
+         *  审核状态显示按钮
+         */
+        buttonShow: {
+          processShow: false,
+          successShow: false,
+          failShow: false,
+        },
+
+        /**
+         * 企业基本信息
+         */
+        enterprise: {
+          enterpriseId: 0,
+          enterpriseName: '',
+          enterpriseRegistrationPlace: '',
+          enterpriseRegisteredCapital: '',
+          enterpriseLegalRepresentative: '',
+          enterpriseFoundingDate: '',
+          enterpriseEmail: '',
+          enterpriseCoreBusiness: '',
+          userId: 0,
+          enterpriseQualificationsCheck: '',
+        },
+
+        /**
+         * 企业用人资格信息
+         */
+        enterpriseQualifications: [{
+          enterpriseId: 0,
+          eqId: 0,
+          eqIndex: '',
+        }],
+
+        /**
+         * 界面预览弹窗显示对象
+         */
+        preview: {
+          previewDialog: false,
+          previewImageUrl: '',
+        }
       }
     }
+
   }
 </script>
 
 <template>
-  <div>
-    <div style="margin-bottom: 5px">
-      <el-input v-model="class_no" placeholder="请输入查询信息" suffix-icon="el-icon-search" style="width: 300px;"></el-input>
-      <el-button type="primary" style="margin-left: 5px;" @click="loadPost">查询</el-button>
-      <el-button type="success" @click="resetParam">重置</el-button>
+  <el-card>
+    <el-descriptions class="margin-top" title="用人资格上传" :column="2" border>
+      <template slot="extra">
+        <el-button v-show="buttonShow.processShow" class="button" type="warning" size="medium">
+          <i class="el-icon-loading"></i>
+          用人资格审查中
+        </el-button>
 
-      <el-button type="primary" style="margin-left: 5px;" @click="add">新增</el-button>
-    </div>
-    <el-table
-        :data="tableData"
-        border
-        style="width: 100%"
+        <el-button v-show="buttonShow.successShow" class="button" type="success" size="medium">
+          <i class="el-icon-check"></i>
+          用人资格审查成功
+        </el-button>
+
+        <el-button v-show="buttonShow.failShow" class="button" type="danger" size="medium">
+          <i class="el-icon-close"></i>
+          用人资格审查未通过
+        </el-button>
+      </template>
+    </el-descriptions>
+
+    <el-upload
+        action=""
+        :http-request="upload"
+        list-type="picture-card"
+        :file-list="fileList"
+        :auto-upload="true"
+        v-if="qualificationsShow"
+        :disabled="isUpload"
     >
-      <el-table-column
-          fixed
-          prop="date"
-          label="录取日期"
-          width="150">
-      </el-table-column>
-      <el-table-column
-          prop="name"
-          label="学生姓名"
-          width="150">
-      </el-table-column>
-      <el-table-column
-          prop="school"
-          label="所属学校"
-          width="250"
-          :filters="listZy"
-          filter-placement="bottom-end"
-          :filter-method="filterHandlerZy">
-      </el-table-column>
-      <el-table-column
-          prop="time"
-          label="工作时间"
-          width="150">
-      </el-table-column>
-      <el-table-column
-          prop="point"
-          label="在职状态"
-          width="100">
-      </el-table-column>
-      <el-table-column
-          prop="department"
-          label="所属分部"
-          width="200">
-      </el-table-column>
-      <el-table-column prop="operate" label="操作">
-        <template slot-scope="scope">
-          <el-button size="small" type="success" @click="mod(scope.row)">修改信息</el-button>
-          <el-popconfirm
-              title="确定删除吗？"
-              @confirm="del(scope.row.class_no)"
-              style="margin-left: 5px"
-          >
-            <el-button slot="reference" size="small" type="danger">删除</el-button>
-          </el-popconfirm>
+      <i slot="default" class="el-icon-plus"></i>
 
-        </template>
-      </el-table-column>
-    </el-table>
-    <el-pagination
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page="pageNum"
-        :page-sizes="[100, 200, 300, 400]"
-        :page-size="pageSize"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total="total">
-    </el-pagination>
-  </div>
+      <div slot="file" slot-scope="{file}">
+        <img
+            class="el-upload-list__item-thumbnail"
+            :src="file.url" alt=""
+        >
+        <span class="el-upload-list__item-actions">
+
+            <span
+                class="el-upload-list__item-preview"
+                @click="handlePictureCardPreview(file)"
+            >
+              <i class="el-icon-zoom-in"></i>
+            </span>
+
+            <span
+                class="el-upload-list__item-delete"
+                @click="handleRemove(file)"
+            >
+              <i class="el-icon-delete"></i>
+            </span>
+
+          </span>
+      </div>
+    </el-upload>
+
+    <!--界面预览弹窗-->
+    <el-dialog :visible.sync="preview.previewDialog">
+      <img width="100%" :src="preview.previewImageUrl" alt="">
+    </el-dialog>
+  </el-card>
 </template>
 
 <style>
+  .button {
+    color: black;
+    cursor: auto;
+  }
 
+  .button:hover {
+    border: 1px solid #000;
+  }
 </style>

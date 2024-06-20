@@ -271,8 +271,10 @@
         //跳转到对应的界面去
         if(userInfo.user.userIdentity == "管理员") {
           this.$router.push('/ManagerIndex')
+          this.$router.push('/ManagerHome')
         } else if(userInfo.user.userIdentity == "企业") {
           this.$router.push('/EnterpriseIndex');
+          this.$router.push('/EnterpriseHome')
         } else if(userInfo.user.userIdentity == "学生") {
           this.$router.push('/GraduateIndex');
           this.$router.push('/GraduateStudent')
@@ -375,10 +377,12 @@
             //跳转到对应的界面去
             if(this.login.userIdentity == "管理员") {
               this.$router.push('/ManagerIndex')
+              this.$router.push('/ManagerHome')
             } else if(this.login.userIdentity == "企业") {
-              this.$router.push('/EnterpriseIndex');
+              this.$router.push('/EnterpriseIndex')
+              this.$router.push('/EnterpriseHome')
             } else if(this.login.userIdentity == "学生") {
-              this.$router.push('/GraduateIndex');
+              this.$router.push('/GraduateIndex')
               this.$router.push('/GraduateStudent')
             }
           } else {
@@ -414,9 +418,10 @@
 
                 //跳转到对应的界面去
                 if(this.logup.userIdentity == "企业") {
-                  this.$router.push('/EnterpriseIndex');
+                  this.$router.push('/EnterpriseIndex')
+                  this.$router.push('/EnterpriseHome')
                 } else if(this.logup.userIdentity == "学生") {
-                  this.$router.push('/GraduateIndex');
+                  this.$router.push('/GraduateIndex')
                   this.$router.push('/GraduateStudent')
                 }
               }

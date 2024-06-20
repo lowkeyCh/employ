@@ -1,45 +1,63 @@
 <script>
   export default {
-    name:"MyMain",
+
     data() {
-      const tableData = [
-        {
-          date: '后端工程师',
-          name: '腾讯',
-          address: '2021'
-        }
-      ]
       return {
-        tableData,
+        list: {
+          unit_account: "111"
+        }
       }
     }
+
   }
 </script>
 
 <template>
-  <div>
-    <div style="margin-bottom: 5px">
-      <el-input placeholder="杜俊橙" style="width: 200px;" suffix-icon="el-icon-search"></el-input>
-      <el-button type="primary" istyle="margin-left: 10px">查询</el-button>
-      <el-button type="success">重置</el-button>
-      <el-button type="info">新增</el-button>
-    </div>
-    <el-table :data="tableData"
-              :header-cell-style="{background:'#989d9f',color:'#555555'}"
-              border
-    >
-      <el-table-column prop="date" label="就业职位" width="140">
+
+  <div style="padding: 5px 20px;">
+    <span>
+      <el-input placeholder="毕业生名称" style="width: 200px" suffix-icon="el-icon-edit"></el-input>
+      <el-button type="primary" icon="el-icon-search" style="margin-left: 10px">查询</el-button>
+      <el-button type="success" icon="el-icon-edit">添加</el-button>
+    </span>
+
+    <el-table :data="list" element-loading-text="Loading" border fit highlight-current-row>
+
+<!--      <el-table-column align="center" label="ID" width="50" type="index">-->
+<!--      </el-table-column>-->
+
+<!--      <el-table-column label="代收单位账号" prop="unit_account">-->
+<!--      </el-table-column>-->
+
+<!--      <el-table-column label="代收单位名称" prop="unit_name">-->
+<!--      </el-table-column>-->
+
+<!--      <el-table-column label="创建时间">-->
+<!--        <template slot-scope="scope">-->
+<!--          <i class="el-icon-time"></i>&nbsp;-->
+<!--          <span style="margin-left: 5px" v-text="(scope.row.create_time).substring(-1,19).replace('T',' ')"></span>-->
+<!--        </template>-->
+<!--      </el-table-column>-->
+
+      <el-table-column fixed="right" label="操作" width="120">
+
+        <template slot-scope="scope">
+
+          <el-tooltip class="item" effect="dark" content="修改密码" placement="top">
+            <el-button type="primary" icon="el-icon-edit" circle @click="BJCollectionForm(scope.$index)"></el-button>
+          </el-tooltip>
+
+          <el-tooltip class="item" effect="dark" content="删除" placement="top">
+            <el-button type="danger" icon="el-icon-delete" circle @click="deleteVisible(scope)"></el-button>
+          </el-tooltip>
+
+        </template>
+
       </el-table-column>
-      <el-table-column prop="name" label="公司名称" width="120">
-      </el-table-column>
-      <el-table-column prop="address" label="入职年份">
-      </el-table-column>
-      <el-table-column prop="operate" label="操作">
-        <el-button type="primary" icon="el-icon-edit" circle></el-button>
-        <el-button type="danger" icon="el-icon-delete" circle></el-button>
-      </el-table-column>
+
     </el-table>
   </div>
+
 </template>
 
 <style>
