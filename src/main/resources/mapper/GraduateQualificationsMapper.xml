@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.du3.ccisp.mapper.GraduateQualificationsMapper">
+    <resultMap id="graduateQualificationsMap" type="org.du3.ccisp.pojo.GraduateQualifications">
+        <result column="graduate_id" property="graduateId"/>
+        <result column="gq_id" property="gqId"/>
+        <result column="gq_index" property="gqIndex"/>
+    </resultMap>
+
+    <insert id="add" parameterType="GraduateQualifications">
+        insert into ccis.graduate_qualifications(gq_index, graduate_id)
+        values (#{gqIndex}, #{graduateId});
+    </insert>
+
+    <delete id="deleteByGqIndex" parameterType="String">
+        delete from ccis.graduate_qualifications
+               where gq_index = #{gqIndex};
+    </delete>
+
+    <select id="queryByGraduateId" resultType="GraduateQualifications" parameterType="Integer" resultMap="graduateQualificationsMap">
+        select *
+        from ccis.graduate_qualifications
+        where graduate_id = #{graduateId};
+    </select>
+
+</mapper>

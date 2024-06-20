@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.du3.ccisp.mapper.GraduateMapper">
+    <resultMap id="graduateMap" type="org.du3.ccisp.pojo.Graduate">
+        <result column="graduate_id" property="graduateId"/>
+        <result column="graduate_name" property="graduateName"/>
+        <result column="graduate_age" property="graduateAge"/>
+        <result column="graduate_sex" property="graduateSex"/>
+        <result column="graduate_birthday" property="graduateBirthday"/>
+        <result column="graduate_college" property="graduateCollege"/>
+        <result column="graduate_graduate_date" property="graduateGraduateDate"/>
+        <result column="graduate_major" property="graduateMajor"/>
+        <result column="user_id" property="userId"/>
+        <result column="graduate_phone" property="graduatePhone"/>
+        <result column="graduate_email" property="graduateEmail"/>
+        <result column="graduate_qualification_check" property="graduateQualificationCheck"/>
+    </resultMap>
+
+
+    <update id="modify" parameterType="Graduate" >
+        update ccis.graduate
+        set graduate_name = #{graduateName},
+            graduate_age = #{graduateAge},
+            graduate_sex = #{graduateSex},
+            graduate_birthday = #{graduateBirthday},
+            graduate_college = #{graduateCollege},
+            graduate_graduate_date = #{graduateGraduateDate},
+            graduate_major = #{graduateMajor},
+            graduate_phone = #{graduatePhone},
+            graduate_email = #{graduateEmail},
+            graduate_qualification_check = #{graduateQualificationCheck}
+        where graduate_id = #{graduateId}
+    </update>
+
+    <select id="getGraduateByUserId" parameterType="Integer" resultType="Graduate" resultMap="graduateMap">
+        select *
+        from ccis.graduate
+        where user_id = #{userId};
+    </select>
+
+    <select id="queryAll" resultType="org.du3.ccisp.pojo.Graduate" resultMap="graduateMap">
+        select *
+        from ccis.graduate
+    </select>
+
+</mapper>

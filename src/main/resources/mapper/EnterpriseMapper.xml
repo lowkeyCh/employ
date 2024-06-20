@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.du3.ccisp.mapper.EnterpriseMapper">
+    <resultMap id="enterpriseMap" type="org.du3.ccisp.pojo.Enterprise">
+        <result column="enterprise_id" property="enterpriseId"/>
+        <result column="enterprise_name" property="enterpriseName"/>
+        <result column="enterprise_registration_place" property="enterpriseRegistrationPlace"/>
+        <result column="enterprise_registered_capital" property="enterpriseRegisteredCapital"/>
+        <result column="enterprise_legal_representative" property="enterpriseLegalRepresentative"/>
+        <result column="enterprise_founding_date" property="enterpriseFoundingDate"/>
+        <result column="enterprise_email" property="enterpriseEmail"/>
+        <result column="enterprise_core_business" property="enterpriseCoreBusiness"/>
+        <result column="user_id" property="userId"/>
+        <result column="enterprise_qualifications_check" property="enterpriseQualificationsCheck"/>
+    </resultMap>
+
+    <update id="modify" parameterType="Enterprise" >
+        update ccis.enterprise
+        set enterprise_name = #{enterpriseName},
+            enterprise_registration_place = #{enterpriseRegistrationPlace},
+            enterprise_registered_capital = #{enterpriseRegisteredCapital},
+            enterprise_legal_representative = #{enterpriseLegalRepresentative},
+            enterprise_founding_date = #{enterpriseFoundingDate},
+            enterprise_email = #{enterpriseEmail},
+            enterprise_core_business = #{enterpriseCoreBusiness},
+            enterprise_qualifications_check = #{enterpriseQualificationsCheck}
+        where enterprise_id = #{enterpriseId}
+    </update>
+
+    <select id="getEnterpriseByUserId" parameterType="Integer" resultType="Enterprise" resultMap="enterpriseMap">
+        select *
+        from ccis.enterprise
+        where user_id = #{userId};
+    </select>
+
+    <select id="queryAll" resultType="org.du3.ccisp.pojo.Enterprise" resultMap="enterpriseMap">
+        select *
+        from ccis.enterprise
+    </select>
+
+</mapper>

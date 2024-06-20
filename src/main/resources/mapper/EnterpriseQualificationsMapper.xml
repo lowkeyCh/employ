@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.du3.ccisp.mapper.EnterpriseQualificationsMapper">
+    <resultMap id="enterpriseQualificationsMap" type="org.du3.ccisp.pojo.EnterpriseQualifications">
+        <result column="enterprise_id" property="enterpriseId"/>
+        <result column="eq_id" property="eqId"/>
+        <result column="eq_index" property="eqIndex"/>
+    </resultMap>
+
+    <insert id="add" parameterType="EnterpriseQualifications">
+        insert into ccis.enterprise_qualifications(eq_index, enterprise_id)
+        values (#{eqIndex}, #{enterpriseId});
+    </insert>
+
+    <delete id="deleteByEqIndex" parameterType="String">
+        delete from ccis.enterprise_qualifications
+        where eq_index = #{eqIndex};
+    </delete>
+
+    <select id="queryByEnterpriseId" resultType="EnterpriseQualifications" parameterType="Integer" resultMap="enterpriseQualificationsMap">
+        select *
+        from ccis.enterprise_qualifications
+        where enterprise_id = #{enterpriseId};
+    </select>
+
+</mapper>
