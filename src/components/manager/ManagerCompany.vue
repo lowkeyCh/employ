@@ -2,20 +2,20 @@
     export default {
       mounted() {
         /**
-         * 从数据库中查询所有企业并保存在enterpriseLists中
+         * 从数据库中查询所有企业并保存在enterpriseList中
          */
         this.$axios.get('http://localhost:8081/enterprise/query_all').then(res=>{
           for(let i = 0; i < res.data.length; i++) {
-            this.enterpriseLists[i].enterpriseId = res.data[i].enterpriseId
-            this.enterpriseLists[i].enterpriseName = res.data[i].enterpriseName
-            this.enterpriseLists[i].enterpriseRegistrationPlace = res.data[i].enterpriseRegistrationPlace
-            this.enterpriseLists[i].enterpriseRegisteredCapital = res.data[i].enterpriseRegisteredCapital
-            this.enterpriseLists[i].enterpriseLegalRepresentative = res.data[i].enterpriseLegalRepresentative
-            this.enterpriseLists[i].enterpriseFoundingDate = res.data[i].enterpriseFoundingDate
-            this.enterpriseLists[i].enterpriseEmail = res.data[i].enterpriseEmail
-            this.enterpriseLists[i].enterpriseCoreBusiness = res.data[i].enterpriseCoreBusiness
-            this.enterpriseLists[i].userId = res.data[i].userId
-            this.enterpriseLists[i].enterpriseQualificationsCheck = res.data[i].enterpriseQualificationsCheck
+            this.enterpriseList[i].enterpriseId = res.data[i].enterpriseId
+            this.enterpriseList[i].enterpriseName = res.data[i].enterpriseName
+            this.enterpriseList[i].enterpriseRegistrationPlace = res.data[i].enterpriseRegistrationPlace
+            this.enterpriseList[i].enterpriseRegisteredCapital = res.data[i].enterpriseRegisteredCapital
+            this.enterpriseList[i].enterpriseLegalRepresentative = res.data[i].enterpriseLegalRepresentative
+            this.enterpriseList[i].enterpriseFoundingDate = res.data[i].enterpriseFoundingDate
+            this.enterpriseList[i].enterpriseEmail = res.data[i].enterpriseEmail
+            this.enterpriseList[i].enterpriseCoreBusiness = res.data[i].enterpriseCoreBusiness
+            this.enterpriseList[i].userId = res.data[i].userId
+            this.enterpriseList[i].enterpriseQualificationsCheck = res.data[i].enterpriseQualificationsCheck
           }
         })
       },
@@ -25,7 +25,7 @@
           /**
            * 企业基本信息
            */
-          enterpriseLists: [{
+          enterpriseList: [{
             enterpriseId: 0,
             enterpriseName: '',
             enterpriseRegistrationPlace: '',
@@ -53,7 +53,7 @@
 
 
 
-        <el-table :data="enterpriseLists"
+        <el-table :data="enterpriseList"
                   :header-cell-style="{background:'rgba(152,157,159,0.5)',color:'#555555'}"
                   border
         >

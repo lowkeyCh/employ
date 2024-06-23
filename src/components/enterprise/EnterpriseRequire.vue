@@ -215,7 +215,8 @@
 
 <template>
   <div class="AllRequire">
-    <div class="mypicture">
+
+    <div class="myPicture">
       <el-row >
         <el-card :body-style="{ padding: '0px' }">
           <div class="word">
@@ -223,23 +224,19 @@
             <span style="font-style: normal;font-size: 25px;height:auto;display: block;text-align: left;white-space: pre-wrap;word-break:break-all;">开启高效招聘方式</span>
           </div>
           <div>
-            <img src="https://img.bosszhipin.com/static/file/2023/n3fa5j6es61684132314764.png" class="image">
+            <img src="https://img.bosszhipin.com/static/file/2023/n3fa5j6es61684132314764.png" class="image" style="width: 500px; height: 550px">
           </div>
         </el-card>
       </el-row>
     </div>
-    <div class="myrequire">
+
+    <div class="myRequire">
       <el-form ref="form" :model="form" label-width="80px">
+
         <el-form-item label="公司名称">
           <el-input v-model="form.name"></el-input>
         </el-form-item>
-        <el-form-item label="招聘类型">
-          <el-radio-group v-model="form.resource">
-            <el-radio label="社招全职"></el-radio>
-            <el-radio label="应届校园招聘"></el-radio>
-            <el-radio label="实习生招聘"></el-radio>
-          </el-radio-group>
-        </el-form-item>
+
         <el-form-item label="职位名称">
           <el-cascader
               placeholder="选择职位名称"
@@ -296,13 +293,13 @@
 </template>
 
 <style>
-.mypicture{
+.myPicture{
   width: 45%;
   position: relative;
   left: 0;
 }
 
-.myrequire{
+.myRequire{
   width: 45%;
   position: absolute;
   right: 0;

@@ -28,20 +28,14 @@
           this.buttonShow.processShow = true
           this.buttonShow.successShow = false
           this.buttonShow.failShow = false
-          //能上传
-          this.isUpload = false
-        } else if(this.enterprise.enterpriseQualificationsCheck == "审核成功") {
+        } else if(this.enterprise.enterpriseQualificationsCheck == "审核通过") {
           this.buttonShow.processShow = false
           this.buttonShow.successShow = true
           this.buttonShow.failShow = false
-          //不能上传
-          this.isUpload = true
         } else {
           this.buttonShow.processShow = false
           this.buttonShow.successShow = false
           this.buttonShow.failShow = true
-          //能上传
-          this.isUpload = false
         }
 
         /**
@@ -88,6 +82,19 @@
        * @param param
        */
       upload(param) {
+        /**
+         * 将审核状态改为未审核 同时改变显示情况
+         */
+        this.buttonShow.processShow = true
+        this.buttonShow.successShow = false
+        this.buttonShow.failShow = false
+
+        /**
+         * 发送请求更新审核状态
+         */
+        this.enterprise.enterpriseQualificationsCheck = '未审核'
+        this.$axios.post('http://localhost:8081/enterprise/modify', this.enterprise)
+
         /**
          * 将文件转换为表单格式
          */
@@ -255,7 +262,6 @@
         :file-list="fileList"
         :auto-upload="true"
         v-if="qualificationsShow"
-        :disabled="isUpload"
     >
       <i slot="default" class="el-icon-plus"></i>
 

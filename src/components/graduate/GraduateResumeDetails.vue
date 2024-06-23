@@ -30,20 +30,14 @@
           this.buttonShow.processShow = true
           this.buttonShow.successShow = false
           this.buttonShow.failShow = false
-          //能上传
-          this.isUpload = false
-        } else if(this.graduate.graduateQualificationCheck == "审核成功") {
+        } else if(this.graduate.graduateQualificationCheck == "审核通过") {
           this.buttonShow.processShow = false
           this.buttonShow.successShow = true
           this.buttonShow.failShow = false
-          //不能上传
-          this.isUpload = true
         } else {
           this.buttonShow.processShow = false
           this.buttonShow.successShow = false
           this.buttonShow.failShow = true
-          //能上传
-          this.isUpload = false
         }
 
         /**
@@ -91,6 +85,19 @@
        * @param param
        */
       upload(param) {
+        /**
+         * 将审核状态改为未审核 同时改变显示情况
+         */
+        this.buttonShow.processShow = true
+        this.buttonShow.successShow = false
+        this.buttonShow.failShow = false
+
+        /**
+         * 发送请求更新审核状态
+         */
+        this.graduate.graduateQualificationCheck = '未审核'
+        this.$axios.post('http://localhost:8081/graduate/modify', this.graduate)
+
         /**
          * 将文件转换为表单格式
          */
@@ -233,21 +240,21 @@
 
 <template>
   <el-card>
-    <el-descriptions class="margin-top" title="毕业资格上传" :column="2" border>
+    <el-descriptions class="margin-top" title="就业资格上传" :column="2" border>
       <template slot="extra">
         <el-button v-show="buttonShow.processShow" class="button" type="warning" size="medium">
           <i class="el-icon-loading"></i>
-          毕业资格审查中
+          就业资格审查中
         </el-button>
 
         <el-button v-show="buttonShow.successShow" class="button" type="success" size="medium">
           <i class="el-icon-check"></i>
-          毕业资格审查成功
+          就业资格审查成功
         </el-button>
 
         <el-button v-show="buttonShow.failShow" class="button" type="danger" size="medium">
           <i class="el-icon-close"></i>
-          毕业资格审查未通过
+          就业资格审查未通过
         </el-button>
       </template>
     </el-descriptions>
@@ -259,7 +266,6 @@
         :file-list="fileList"
         :auto-upload="true"
         v-if="qualificationsShow"
-        :disabled="isUpload"
     >
         <i slot="default" class="el-icon-plus"></i>
 

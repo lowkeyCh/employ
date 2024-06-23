@@ -1,86 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="56e48310-7f59-4271-95d0-487e1c85cefb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerIndex.vue" afterDir="false" />
+    <list default="true" id="8d238939-4457-4e73-ab5c-730118ce2300" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/enterprise/EnterpriseRequire.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/enterprise/EnterpriseRequire.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/enterprise/EnterpriseResume.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/enterprise/EnterpriseResume.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/graduate/GraduateResumeDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/graduate/GraduateResumeDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerAside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerAside.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerComaudit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerComaudit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerCompany.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerCompany.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerGraduationQualifications.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerGraduationQualifications.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerMain.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-        <option value="Vue Composition API Component" />
-      </list>
-    </option>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2gYFDtYkLLVxOror1g79mXYiTdx" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2i7exd1P6qgfHqOVO8ewdG2fzdR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Du3/Desktop/employment-tang/src/components/graduate&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.npm.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql_aurora_aws&quot;
-    ],
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Composition API Component&quot;
-    ]
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Du3\Desktop\employment-tang\src\components\graduate" />
-      <recent name="C:\Users\Du3\Desktop\employment-tang\src\components\enterprise" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Du3\Desktop\employment-tang\src\components\global" />
-      <recent name="C:\Users\Du3\Desktop\employment-tang\src" />
-      <recent name="C:\Users\Du3\Desktop\employment-tang\src\components" />
-      <recent name="C:\Users\Du3\Desktop\employment-tang\src\components\manager" />
-    </key>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="npm" type="js.build_tools.npm">
+    <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -91,38 +56,20 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="56e48310-7f59-4271-95d0-487e1c85cefb" name="Changes" comment="" />
-      <created>1715866487845</created>
+      <changelist id="8d238939-4457-4e73-ab5c-730118ce2300" name="Changes" comment="" />
+      <created>1718846291108</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1715866487845</updated>
-      <workItem from="1715866488858" duration="16720000" />
-      <workItem from="1716040805339" duration="6092000" />
-      <workItem from="1716265315783" duration="10981000" />
-      <workItem from="1716469193636" duration="6673000" />
-      <workItem from="1716509801654" duration="3230000" />
-      <workItem from="1716954820821" duration="1671000" />
-      <workItem from="1716965612994" duration="8212000" />
-      <workItem from="1717053141251" duration="9572000" />
-      <workItem from="1718268847687" duration="24540000" />
-      <workItem from="1718450711845" duration="20454000" />
-      <workItem from="1718524423370" duration="12185000" />
-      <workItem from="1718594322140" duration="68000" />
-      <workItem from="1718696928041" duration="9302000" />
-      <workItem from="1718779523883" duration="29988000" />
-      <workItem from="1718846609121" duration="4000" />
-      <workItem from="1718846735076" duration="47000" />
+      <updated>1718846291108</updated>
+      <workItem from="1718846293546" duration="242000" />
+      <workItem from="1718848211184" duration="374000" />
+      <workItem from="1718849947320" duration="812000" />
+      <workItem from="1718851685029" duration="15297000" />
+      <workItem from="1719112822190" duration="2425000" />
+      <workItem from="1719149022443" duration="1383000" />
     </task>
     <servers />
   </component>

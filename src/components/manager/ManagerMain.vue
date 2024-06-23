@@ -6,18 +6,18 @@
        */
       this.$axios.get('http://localhost:8081/graduate/query_all').then(res=>{
         for(let i = 0; i < res.data.length; i++) {
-          this.graduateLists[i].graduateId = res.data[i].graduateId
-          this.graduateLists[i].graduateName = res.data[i].graduateName
-          this.graduateLists[i].graduateAge = res.data[i].graduateAge
-          this.graduateLists[i].graduateSex = res.data[i].graduateSex
-          this.graduateLists[i].graduateBirthday = res.data[i].graduateBirthday
-          this.graduateLists[i].graduateCollege = res.data[i].graduateCollege
-          this.graduateLists[i].graduateGraduateDate = res.data[i].graduateGraduateDate
-          this.graduateLists[i].graduateMajor = res.data[i].graduateMajor
-          this.graduateLists[i].userId = res.data[i].userId
-          this.graduateLists[i].graduatePhone = res.data[i].graduatePhone
-          this.graduateLists[i].graduateEmail = res.data[i].graduateEmail
-          this.graduateLists[i].graduateQualificationCheck = res.data[i].graduateQualificationCheck
+          this.graduateList[i].graduateId = res.data[i].graduateId
+          this.graduateList[i].graduateName = res.data[i].graduateName
+          this.graduateList[i].graduateAge = res.data[i].graduateAge
+          this.graduateList[i].graduateSex = res.data[i].graduateSex
+          this.graduateList[i].graduateBirthday = res.data[i].graduateBirthday
+          this.graduateList[i].graduateCollege = res.data[i].graduateCollege
+          this.graduateList[i].graduateGraduateDate = res.data[i].graduateGraduateDate
+          this.graduateList[i].graduateMajor = res.data[i].graduateMajor
+          this.graduateList[i].userId = res.data[i].userId
+          this.graduateList[i].graduatePhone = res.data[i].graduatePhone
+          this.graduateList[i].graduateEmail = res.data[i].graduateEmail
+          this.graduateList[i].graduateQualificationCheck = res.data[i].graduateQualificationCheck
         }
       })
     },
@@ -27,7 +27,7 @@
         /**
          * 毕业生个人基本信息集合
          */
-        graduateLists: [{
+        graduateList: [{
           graduateId: 0,
           graduateName: '',
           graduateAge: '',
@@ -49,13 +49,13 @@
 <template>
   <div>
     <div style="padding: 5px 20px 10px 0px">
-      <el-input placeholder="企业名称" style="width: 200px" suffix-icon="el-icon-edit"></el-input>
+      <el-input placeholder="毕业生名称" style="width: 200px" suffix-icon="el-icon-edit"></el-input>
       <el-button type="primary" icon="el-icon-search" style="margin-left: 10px">查询</el-button>
     </div>
 
 
 
-    <el-table :data="graduateLists"
+    <el-table :data="graduateList"
               :header-cell-style="{background:'rgba(152,157,159,0.5)',color:'#555555'}"
               border
     >
