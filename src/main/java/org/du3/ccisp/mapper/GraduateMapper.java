@@ -26,5 +26,12 @@ public interface GraduateMapper {
      * 查询所有毕业生并返回集合
      * @return
      */
-    public List<Graduate> queryAll();
+    List<Graduate> queryAll();
+
+    /**
+     * 根据毕业生id查询毕业生
+     * @param graduateId
+     * @return
+     */
+    Graduate queryByGraduateId(int graduateId);
 }

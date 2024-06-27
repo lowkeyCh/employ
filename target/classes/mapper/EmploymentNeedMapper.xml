@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.du3.ccisp.mapper.EmploymentNeedMapper">
+    <resultMap id="employmentNeedMap" type="org.du3.ccisp.pojo.EmploymentNeed">
+        <result column="en_id" property="enId"/>
+        <result column="en_pay" property="enPay"/>
+        <result column="quarters_id" property="quartersId"/>
+        <result column="en_number" property="enNumber"/>
+        <result column="en_recent_number" property="enRecentNumber"/>
+        <result column="en_occupation_description" property="enOccupationDescription"/>
+        <result column="en_work_place" property="enWorkPlace"/>
+        <result column="en_end_date" property="enEndDate"/>
+        <result column="enterprise_id" property="enterpriseId"/>
+    </resultMap>
+
+    <insert id="add" parameterType="EmploymentNeed">
+        insert into ccis.employment_need(en_pay, quarters_id, en_number, en_recent_number, en_occupation_description, en_work_place, en_end_date, enterprise_id)
+        values (#{enPay}, #{quartersId}, #{enNumber}, #{enRecentNumber}, #{enOccupationDescription}, #{enWorkPlace}, #{enEndDate}, #{enterpriseId});
+    </insert>
+
+    <select id="queryAll" resultType="org.du3.ccisp.pojo.EmploymentNeed" resultMap="employmentNeedMap">
+        select *
+        from ccis.employment_need;
+    </select>
+
+
+    <select id="queryByEnId" parameterType="int" resultType="org.du3.ccisp.pojo.EmploymentNeed" resultMap="employmentNeedMap">
+        select *
+        from ccis.employment_need
+        where en_id = #{enId};
+    </select>
+
+    <select id="queryByEnterpriseId" parameterType="int" resultType="org.du3.ccisp.pojo.EmploymentNeed" resultMap="employmentNeedMap">
+        select *
+        from ccis.employment_need
+        where enterprise_id = #{enterpriseId};
+    </select>
+
+</mapper>

@@ -21,6 +21,11 @@ public class EnterpriseServiceImpl implements EnterpriseService {
     }
 
     @Override
+    public Enterprise queryByEnterpriseId(int enterpriseId) {
+        return enterpriseMapper.queryByEnterpriseId(enterpriseId);
+    }
+
+    @Override
     public Enterprise getEnterpriseByUserId(int userId) {
         return enterpriseMapper.getEnterpriseByUserId(userId);
     }

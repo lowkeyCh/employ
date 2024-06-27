@@ -10,4 +10,6 @@ public interface GraduateService {
     void modify(Graduate graduate);
 
     List<Graduate> queryAll();
+
+    Graduate queryByGraduateId(int graduateId);
 }

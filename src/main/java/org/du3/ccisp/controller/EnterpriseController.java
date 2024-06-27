@@ -33,6 +33,12 @@ public class EnterpriseController {
         return JSON.toJSONString(enterpriseService.getEnterpriseByUserId(userId));
     }
 
+    @GetMapping("/query_by_enterprise_id")
+    @ResponseBody
+    public Enterprise queryByEnterpriseId(int enterpriseId) {
+        return enterpriseService.queryByEnterpriseId(enterpriseId);
+    }
+
     @PostMapping("/modify")
     @ResponseBody
     public void modify(@RequestBody Enterprise enterprise) {

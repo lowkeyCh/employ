@@ -46,4 +46,10 @@
         from ccis.graduate
     </select>
 
+    <select id="queryByGraduateId" parameterType="Integer" resultType="org.du3.ccisp.pojo.Graduate" resultMap="graduateMap">
+        select *
+        from ccis.graduate
+        where graduate_id = #{graduateId};
+    </select>
+
 </mapper>

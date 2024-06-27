@@ -41,4 +41,10 @@
         from ccis.enterprise
     </select>
 
+    <select id="queryByEnterpriseId" parameterType="Integer" resultType="org.du3.ccisp.pojo.Enterprise" resultMap="enterpriseMap">
+        select *
+        from ccis.enterprise
+        where enterprise_id = #{enterpriseId};
+    </select>
+
 </mapper>

@@ -31,6 +31,12 @@ public class GraduateController {
         return JSON.toJSONString(graduateService.getGraduateByUserId(userId));
     }
 
+    @GetMapping("/query_by_graduate_id")
+    @ResponseBody
+    public Graduate queryByGraduateId(int graduateId) {
+        return graduateService.queryByGraduateId(graduateId);
+    }
+
     @PostMapping("/modify")
     @ResponseBody
     public void modify(@RequestBody Graduate graduate) {

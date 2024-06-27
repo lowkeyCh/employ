@@ -28,4 +28,9 @@ public class GraduateServiceImpl implements GraduateService {
     public List<Graduate> queryAll() {
         return graduateMapper.queryAll();
     }
+
+    @Override
+    public Graduate queryByGraduateId(int graduateId) {
+        return graduateMapper.queryByGraduateId(graduateId);
+    }
 }

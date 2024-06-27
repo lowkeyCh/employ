@@ -11,4 +11,6 @@ public interface EnterpriseService {
     void modify(Enterprise enterprise);
 
     List<Enterprise> queryAll();
+
+    Enterprise queryByEnterpriseId(int enterpriseId);
 }

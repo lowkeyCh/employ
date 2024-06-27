@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.du3.ccisp.mapper.QuartersMapper">
+    <resultMap id="quartersMap" type="org.du3.ccisp.pojo.Quarters">
+        <result column="quarters_id" property="quartersId"/>
+        <result column="quarters_first" property="quartersFirst"/>
+        <result column="quarters_second" property="quartersSecond"/>
+        <result column="quarters_third" property="quartersThird"/>
+    </resultMap>
+
+    <select id="queryAll" resultType="org.du3.ccisp.pojo.Quarters" resultMap="quartersMap">
+        select *
+        from ccis.quarters
+    </select>
+
+</mapper>

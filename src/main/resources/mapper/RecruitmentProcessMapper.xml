@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.du3.ccisp.mapper.RecruitmentProcessMapper">
+    <resultMap id="recruitmentProcessMap" type="org.du3.ccisp.pojo.RecruitmentProcess">
+        <result column="rp_id" property="rpId"/>
+        <result column="graduate_id" property="graduateId"/>
+        <result column="en_id" property="enId"/>
+        <result column="rp_phase" property="rpPhase"/>
+        <result column="rp_check" property="rpCheck"/>
+        <result column="rp_face_location" property="rpFaceLocation"/>
+        <result column="rp_work_file" property="rpWorkFile"/>
+    </resultMap>
+
+    <insert id="add" parameterType="RecruitmentProcess">
+        insert into ccis.recruitment_process(graduate_id, en_id, rp_phase)
+        values (#{graduateId}, #{enId}, #{rpPhase});
+    </insert>
+
+    <update id="update" parameterType="RecruitmentProcess">
+        update ccis.recruitment_process
+        set rp_phase = #{rpPhase}, rp_check = #{rpCheck}, rp_face_location = #{rpFaceLocation}, rp_work_file = #{rpWorkFile}
+        where rp_id = #{rpId};
+    </update>
+
+    <select id="queryByGraduateId" parameterType="int" resultType="RecruitmentProcess" resultMap="recruitmentProcessMap">
+        select * from ccis.recruitment_process
+        where graduate_id = #{graduateId}
+    </select>
+
+
+    <select id="queryAll" resultType="org.du3.ccisp.pojo.RecruitmentProcess" resultMap="recruitmentProcessMap">
+        select *
+        from ccis.recruitment_process
+    </select>
+
+    <select id="queryByRpId" resultType="org.du3.ccisp.pojo.RecruitmentProcess" resultMap="recruitmentProcessMap">
+        select *
+        from ccis.recruitment_process
+        where rp_id = #{rpId};
+    </select>
+
+    <select id="queryByEnId" resultType="org.du3.ccisp.pojo.RecruitmentProcess" resultMap="recruitmentProcessMap">
+        select *
+        from ccis.recruitment_process
+        where en_id = #{enId}
+    </select>
+</mapper>

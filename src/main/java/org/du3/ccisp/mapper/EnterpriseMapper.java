@@ -18,6 +18,13 @@ public interface EnterpriseMapper {
     Enterprise getEnterpriseByUserId(int userId);
 
     /**
+     * 通过enterpriseId查询企业
+     * @param enterpriseId
+     * @return
+     */
+    Enterprise queryByEnterpriseId(int enterpriseId);
+
+    /**
      * 修改enterprise的信息 根据所传对象的enterpriseId
      * @param enterprise
      */
