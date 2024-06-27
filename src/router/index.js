@@ -7,22 +7,26 @@ import LoginInterface from "@/components/LoginInterface.vue";
 
 import ManagerIndex from "@/components/manager/ManagerIndex.vue";
 import ManagerHome from "@/components/manager/ManagerHome.vue";
-import ManagerCompany from "@/components/manager/ManagerCompany.vue";
-import ManagerComaudit from "@/components/manager/ManagerComaudit.vue";
-import ManagerMain from "@/components/manager/ManagerMain.vue";
+import ManagerCompany from "@/components/manager/ManagerEnterprise.vue";
+import ManagerComaudit from "@/components/manager/ManagerEnterpriseQualifications.vue";
+import ManagerMain from "@/components/manager/ManagerGraduate.vue";
 
-import ManagerGraduationQualifications from "@/components/manager/ManagerGraduationQualifications.vue";
+import ManagerGraduationQualifications from "@/components/manager/ManagerGraduateQualifications.vue";
 import GraduateIndex from "@/components/graduate/GraduateIndex.vue";
-import GraduateWork from "@/components/graduate/GraduateWork.vue";
-import GraduateStudent from "@/components/graduate/GraduateStudent.vue";
-import GraduateResumeDelivery from "@/components/graduate/GraduateResumeDelivery.vue";
+import GraduateWork from "@/components/graduate/GraduateGetWork.vue";
+import GraduateStudent from "@/components/graduate/GraduateDetails.vue";
+import GraduateEmploymentNeed from "@/components/graduate/recruitment_process/GraduateEmploymentNeed.vue";
+import GraduateRecruitmentProcess from "@/components/graduate/recruitment_process/GraduateRecruitmentProcess.vue";
 
-import GraduateResumeDetails from "@/components/graduate/GraduateResumeDetails.vue";
+import GraduateResumeDetails from "@/components/graduate/GraduateResume.vue";
 import EnterpriseIndex from "@/components/enterprise/EnterpriseIndex.vue";
-import EnterpriseHome from "@/components/enterprise/EnterpriseHome.vue";
+import EnterpriseHome from "@/components/enterprise/EnterpriseDetails.vue";
 import EnterpriseResume from "@/components/enterprise/EnterpriseResume.vue"
-import EnterpriseRequire from "@/components/enterprise/EnterpriseRequire.vue";
+import EnterpriseRequire from "@/components/enterprise/EnterpriseReleaseEN.vue";
 import EnterpriseRecruit from "@/components/enterprise/EnterpriseRecruit.vue";
+import EnterpriseEmploymentNeed from "@/components/enterprise/recruitment_process/EnterpriseEmploymentNeed.vue";
+import EnterpriseENGraduates from "@/components/enterprise/recruitment_process/EnterpriseENGraduates.vue";
+import EnterpriseRecruitmentProcess from "@/components/enterprise/recruitment_process/EnterpriseRecruitmentProcess.vue";
 
 //2.调用vue.use() 函数，把 VueRouter 安装为 Vue 的插件
 //vue.use()函数的作用，就是来安装插件的
@@ -101,13 +105,6 @@ const routes= [
                 component: GraduateWork
             },
             {
-                path: '/GraduateResumeDelivery',
-                meta: {
-                    title: '简历投递'
-                },
-                component: GraduateResumeDelivery
-            },
-            {
                 path: '/GraduateResumeDetails',
                 meta: {
                     title: '简历详情'
@@ -120,6 +117,20 @@ const routes= [
                     title:'用户账号信息管理',
                 },
                 component: PersonalInterface
+            },
+            {
+                path: '/GraduateEmploymentNeed',
+                meta: {
+                    title: '简历详情'
+                },
+                component: GraduateEmploymentNeed
+            },
+            {
+                path:'/GraduateRecruitmentProcess',
+                meta:{
+                    title:'用户账号信息管理',
+                },
+                component: GraduateRecruitmentProcess
             }
         ]
     },
@@ -161,6 +172,27 @@ const routes= [
                     title:'用户账号信息管理',
                 },
                 component: PersonalInterface
+            },
+            {
+                path:'/EnterpriseEmploymentNeed',
+                meta:{
+                    title:'用人需求查看',
+                },
+                component: EnterpriseEmploymentNeed
+            },
+            {
+                path:'/EnterpriseENGraduates',
+                meta:{
+                    title:'申请毕业生集合',
+                },
+                component: EnterpriseENGraduates
+            },
+            {
+                path:'/EnterpriseRecruitmentProcess',
+                meta:{
+                    title:'招聘进度',
+                },
+                component: EnterpriseRecruitmentProcess
             }
         ]
     }

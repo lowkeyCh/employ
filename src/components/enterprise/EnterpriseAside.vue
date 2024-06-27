@@ -1,13 +1,9 @@
-<script>
-
-</script>
-
 <template>
   <el-menu
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
-      default-active="/EnterpriseHome"
+      :default-active="this.$route.path"
       :collapse-transition="false"
       style="height: 100vh"
       router
@@ -28,14 +24,15 @@
       <span slot="title">发布用人需求</span>
     </el-menu-item>
 
-    <el-menu-item index="/EnterpriseRecruit">
-      <i class="el-icon-share"></i>
-      <span slot="title">正在招收</span>
-    </el-menu-item>
+    <el-submenu>
+      <template slot="title"><i class="el-icon-share"></i>正在招收</template>
+
+      <el-menu-item-group title="员工招聘" style="font-weight: bolder">
+        <el-menu-item index="/EnterpriseEmploymentNeed">用人需求查看</el-menu-item>
+        <el-menu-item index="/EnterpriseENGraduates">申请毕业生集合</el-menu-item>
+        <el-menu-item index="/EnterpriseRecruitmentProcess">招聘进度</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
 
   </el-menu>
 </template>
-
-<style>
-
-</style>

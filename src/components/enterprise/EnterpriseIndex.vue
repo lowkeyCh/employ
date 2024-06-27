@@ -3,7 +3,6 @@ import EnterpriseAside from "@/components/enterprise/EnterpriseAside.vue";
 import EnterpriseHeader from "@/components/enterprise/EnterpriseHeader.vue";
 
 export default {
-  name: "EnterpriseIndex",
   components: {EnterpriseHeader, EnterpriseAside}
 }
 </script>

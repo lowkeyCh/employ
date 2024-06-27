@@ -1,6 +1,9 @@
 <script>
   export default {
     mounted() {
+      if( this.$route.path != '/EnterpriseResume')
+        this.$route.path = '/EnterpriseResume'
+
       /**
        * 获取用户id
        */
