@@ -5,26 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d238939-4457-4e73-ab5c-730118ce2300" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/enterprise/EnterpriseReleaseEN.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/graduate/GraduateGetWork.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/eslint/ace45e14.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/eslint/ace45e14.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/enterprise/EnterpriseAside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/enterprise/EnterpriseAside.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/enterprise/EnterpriseHome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/enterprise/EnterpriseDetails.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/enterprise/EnterpriseIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/enterprise/EnterpriseIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/enterprise/EnterpriseRequire.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/enterprise/EnterpriseResume.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/enterprise/EnterpriseResume.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/enterprise/EnterpriseReleaseEN.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/enterprise/EnterpriseReleaseEN.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/global/QuartersGlobal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/global/QuartersGlobal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/global/RecruitmentProcessGlobal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/global/RecruitmentProcessGlobal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/graduate/GraduateAside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/graduate/GraduateAside.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/graduate/GraduateResumeDelivery.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/graduate/GraduateResumeDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/graduate/GraduateResume.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/graduate/GraduateStudent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/graduate/GraduateDetails.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/graduate/GraduateWork.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerComaudit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerEnterpriseQualifications.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerCompany.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerEnterprise.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerGraduationQualifications.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerGraduateQualifications.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerGraduate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/graduate/GraduateGetWork.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/graduate/GraduateGetWork.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/graduate/recruitment_process/GraduateRecruitmentProcess.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/graduate/recruitment_process/GraduateRecruitmentProcess.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerAside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerAside.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerEnterprise.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/identity_details/ManagerEnterprise.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerEnterpriseQualifications.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/identity_details/ManagerEnterpriseQualifications.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerGraduate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/identity_details/ManagerGraduate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerGraduateQualifications.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/identity_details/ManagerGraduateQualifications.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/manager/ManagerHome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/manager/ManagerHome.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Composition API Component" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -51,9 +46,6 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
   <component name="ProjectId" id="2i7exd1P6qgfHqOVO8ewdG2fzdR" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -62,28 +54,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.serve.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Composition API Component&quot;
-    ]
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\17703\Desktop\Projects-web\ccis-web\src\components\manager\identity_details" />
       <recent name="C:\Users\Du3\Desktop\WebProjects\ccis-web\src\components\enterprise\recruitment_process" />
       <recent name="C:\Users\Du3\Desktop\WebProjects\ccis-web\src\components\graduate\recruitment_process" />
     </key>
@@ -125,6 +106,10 @@
       <workItem from="1719200403191" duration="15206000" />
       <workItem from="1719315795220" duration="2599000" />
       <workItem from="1719384231146" duration="76248000" />
+      <workItem from="1719528756817" duration="516000" />
+      <workItem from="1719533951729" duration="4302000" />
+      <workItem from="1719661137135" duration="22777000" />
+      <workItem from="1719815600003" duration="1578000" />
     </task>
     <servers />
   </component>

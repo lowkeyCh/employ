@@ -64,6 +64,19 @@ export default {
   },
 
   methods: {
+    query_all() {
+      this.$axios.get('http://localhost:8081/rp/query_all').then(res=>{
+        for(let i = 0; i < res.data.length; i++) {
+          this.recruitmentProcessList[i] = {
+            rpId: res.data[i].rpId,
+            graduateId: res.data[i].graduateId,
+            enId: res.data[i].enId,
+            rpPhase: res.data[i].rpPhase,
+          }
+        }
+      })
+    },
+
     add() {
       this.$axios.post('http://localhost:8081/rp/add', this.recruitmentProcessAdd).then(res=> {
         //判断是否添加成功并返回对应信息

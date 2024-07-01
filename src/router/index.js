@@ -7,11 +7,15 @@ import LoginInterface from "@/components/LoginInterface.vue";
 
 import ManagerIndex from "@/components/manager/ManagerIndex.vue";
 import ManagerHome from "@/components/manager/ManagerHome.vue";
-import ManagerCompany from "@/components/manager/ManagerEnterprise.vue";
-import ManagerComaudit from "@/components/manager/ManagerEnterpriseQualifications.vue";
-import ManagerMain from "@/components/manager/ManagerGraduate.vue";
+import ManagerCompany from "@/components/manager/identity_details/ManagerEnterprise.vue";
+import ManagerComaudit from "@/components/manager/identity_details/ManagerEnterpriseQualifications.vue";
+import ManagerMain from "@/components/manager/identity_details/ManagerGraduate.vue";
+import ManagerQuarters from "@/components/manager/ManagerQuarters";
+import ManagerEN from "@/components/manager/ManagerEN";
+import ManagerUser from "@/components/manager/ManagerUser";
+import ManagerRP from "@/components/manager/ManagerRP";
 
-import ManagerGraduationQualifications from "@/components/manager/ManagerGraduateQualifications.vue";
+import ManagerGraduationQualifications from "@/components/manager/identity_details/ManagerGraduateQualifications.vue";
 import GraduateIndex from "@/components/graduate/GraduateIndex.vue";
 import GraduateWork from "@/components/graduate/GraduateGetWork.vue";
 import GraduateStudent from "@/components/graduate/GraduateDetails.vue";
@@ -76,6 +80,34 @@ const routes= [
                     title:'学生毕业资格审查',
                 },
                 component: ManagerGraduationQualifications
+            },
+            {
+                path: '/ManagerQuarters',
+                meta: {
+                    title: '职位管理'
+                },
+                component: ManagerQuarters
+            },
+            {
+                path: '/ManagerEN',
+                meta: {
+                    title: '用人需求管理'
+                },
+                component: ManagerEN
+            },
+            {
+                path: '/ManagerUser',
+                meta: {
+                    title: '账号管理'
+                },
+                component: ManagerUser
+            },
+            {
+                path: '/ManagerRP',
+                meta: {
+                    title: '招聘进度管理'
+                },
+                component: ManagerRP
             },
             {
                 path:'/personal_gly',

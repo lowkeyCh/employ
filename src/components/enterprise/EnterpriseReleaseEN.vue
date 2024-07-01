@@ -335,7 +335,7 @@
             <span style="font-style: normal;font-size: 25px;height:auto;display: block;text-align: left;white-space: pre-wrap;word-break:break-all;">开启高效招聘方式</span>
           </div>
           <div>
-            <img src="https://img.bosszhipin.com/static/file/2023/n3fa5j6es61684132314764.png" class="image" style="width: 500px; height: 550px">
+            <img src="https://img.bosszhipin.com/static/file/2023/n3fa5j6es61684132314764.png" class="image" style="width: 500px; height: 500px">
           </div>
         </el-card>
       </el-row>
@@ -367,7 +367,7 @@
             </el-option>
           </el-select>
 
-          <el-select v-model="quartersThirdSelected" placeholder="请选择模块" v-if="thirdShow" style="width: 150px; margin-right: 20px">
+          <el-select v-model="quartersThirdSelected" placeholder="请选择职位" v-if="thirdShow" style="width: 150px; margin-right: 20px">
             <el-option
                 v-for="qt in quartersThird"
                 :key="qt.value"

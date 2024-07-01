@@ -129,13 +129,18 @@
         <el-image v-for="index in fileList" :key="index.name" :src="index.url" lazy></el-image>
       </el-dialog>
 
-      <el-button @click="firstOff" type="danger" style="color:black; font-size: 20px; width: 200px; height: 66px; margin-top: 50px; margin-right: 20px; float: right">
-        不同意就业协议书
-      </el-button>
 
-      <el-button @click="thirdOk" type="success" style="color:black; font-size: 20px; width: 200px; height: 66px; margin-top: 50px; margin-right: 20px; float: right">
-        同意就业协议书
-      </el-button>
+
+      <canvas ref="canvas" @mousedown="startDrawing" @mousemove="draw" @mouseup="stopDrawing"></canvas>
+      <div>
+        <el-button @click="clearCanvas" type="info" style="color:black; font-size: 20px; width: 200px; height: 66px; margin-top: 50px; margin-right: 20px; float: right">
+          清除
+        </el-button>
+
+        <el-button @click="thirdOk" type="success" style="color:black; font-size: 20px; width: 200px; height: 66px; margin-top: 50px; margin-right: 20px; float: right">
+          签字确认
+        </el-button>
+      </div>
     </div>
 
     <div style="margin-top: 200px; margin-left: 550px; "  v-show="stepsShow.fourthShow">
@@ -157,6 +162,10 @@ export default {
      * 挂载阶段调用，DOM初始化完成进行地图初始化
      */
     this.initMap();
+
+    this.context = this.$refs.canvas.getContext("2d"); // 获取Canvas上下文
+    this.$refs.canvas.width = 1300; // 设置Canvas的宽度
+    this.$refs.canvas.height = 300; // 设置Canvas的高
 
     /**
      * 获取用户id并根据用户id获取毕业生个人基本信息
@@ -296,6 +305,9 @@ export default {
 
   data() {
     return {
+      isDrawing: false, // 是否正在绘制
+      context: null, // Canvas上下文
+
       /**
        * 就业协议书表
        */
@@ -399,6 +411,34 @@ export default {
   },
 
   methods: {
+    // 鼠标按下时触发
+    startDrawing(event) {
+      this.isDrawing = true; // 开始绘制
+      const { offsetX, offsetY } = event; // 获取鼠标相对于Canvas的偏移量
+      this.context.beginPath(); // 开始新的路径
+      this.context.moveTo(offsetX, offsetY); // 将路径移动到鼠标位置
+    },
+    // 当鼠标在 Canvas 上移动时触发
+    draw(event) {
+      if (!this.isDrawing) return; // 如果没有在绘制中，则返回
+      const { offsetX, offsetY } = event; // 获取鼠标相对于Canvas的偏移量
+      this.context.lineTo(offsetX, offsetY); // 绘制路径
+      this.context.stroke(); // 绘制路径的边框
+    },
+    // 当鼠标松开时触发，用于停止绘制签名
+    stopDrawing() {
+      this.isDrawing = false; // 停止绘制
+    },
+    // 清除
+    clearCanvas() {
+      this.context.clearRect(
+          0,
+          0,
+          this.$refs.canvas.width,
+          this.$refs.canvas.height
+      ); // 清除Canvas上的内容
+    },
+
     /**
      * 地图初始化加载
      */
@@ -476,5 +516,10 @@ export default {
   height: 500px;
   margin: 50px auto;
   border: 2px solid black;
+}
+
+canvas {
+  float: right;
+  border: 1px solid black;
 }
 </style>

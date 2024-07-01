@@ -5,7 +5,7 @@
       active-text-color="#ffd04b"
       :default-active="this.$route.path"
       :collapse-transition="false"
-      style="height: 100vh"
+      style="height: 200vh"
       router
   >
 

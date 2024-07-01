@@ -9,7 +9,7 @@ export default {
              background-color="#545c64"
              text-color="#fff"
              active-text-color="#ffd04b"
-             style="height: 100vh;"
+             style="height: 200vh;"
              router
              default-active="/ManagerHome"
     >
@@ -30,10 +30,10 @@ export default {
             </el-menu-item-group>
 
         </el-submenu>
-        <el-menu-item index="3"><i class="el-icon-notebook-1"></i>就业协议书管理</el-menu-item>
-        <el-menu-item index="4"><i class="el-icon-s-marketing"></i>就业数据统计</el-menu-item>
-        <el-menu-item index="5"><i class="el-icon-cpu"></i>学院专业管理</el-menu-item>
-        <el-menu-item index="6"><i class="el-icon-ship"></i>企业类型管理</el-menu-item>
+        <el-menu-item index="/ManagerQuarters"><i class="el-icon-notebook-1"></i>职位管理</el-menu-item>
+        <el-menu-item index="/ManagerEN"><i class="el-icon-s-marketing"></i>用人需求管理</el-menu-item>
+        <el-menu-item index="/ManagerRP"><i class="el-icon-cpu"></i>招聘进度管理</el-menu-item>
+        <el-menu-item index="/ManagerUser"><i class="el-icon-ship"></i>账号管理</el-menu-item>
     </el-menu>
 </template>
 
