@@ -42,7 +42,7 @@
 
     <select id="queryAll" resultType="User" resultMap="userMap">
         select *
-            from ccis.user;
+        from ccis.user;
     </select>
 
 </mapper>

@@ -36,7 +36,7 @@ public class FileUpdate {
                 + oldName.substring(oldName.lastIndexOf("."), oldName.length());
 
         // 文件保存
-        file.transferTo(new File("C:\\Users\\Du3\\IdeaProjects\\CCISP\\src\\main\\resources\\static\\resume", newName));
+        file.transferTo(new File("C:\\Users\\17703\\Desktop\\Projects\\ccis\\src\\main\\resources\\static\\resume", newName));
 
         // 返回上传文件的文件名
         return newName;

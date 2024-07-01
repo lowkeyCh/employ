@@ -9,6 +9,8 @@ public interface UserService {
 
     User match(User user);
 
+    List<User> queryAll();
+
     /**
      * 删除一条数据
      * @param userId 被删除数据的id
@@ -26,10 +28,5 @@ public interface UserService {
      * @param userId 查询的id
      */
     User queryById(Integer userId);
-
-    /**
-     * 查询全部数据
-     */
-    List<User> queryAll();
 }
 

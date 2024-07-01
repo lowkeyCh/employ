@@ -11,4 +11,8 @@ import java.util.List;
 @Mapper
 public interface QuartersMapper {
     List<Quarters> queryAll();
+
+    Quarters queryByQuartersId(int quartersId);
+
+    void add(Quarters quarters);
 }

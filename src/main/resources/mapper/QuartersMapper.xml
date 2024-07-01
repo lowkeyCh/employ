@@ -16,4 +16,15 @@
         from ccis.quarters
     </select>
 
+    <select id="queryByQuartersId" resultType="org.du3.ccisp.pojo.Quarters" resultMap="quartersMap">
+        select *
+        from ccis.quarters
+        where quarters_id = #{quartersId};
+    </select>
+
+    <insert id="add" parameterType="Quarters">
+        insert into ccis.quarters(quarters_first, quarters_second, quarters_third)
+        values (#{quartersFirst}, #{quartersSecond}, #{quartersThird});
+    </insert>
+
 </mapper>

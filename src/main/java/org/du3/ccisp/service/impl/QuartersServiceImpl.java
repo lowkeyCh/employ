@@ -18,4 +18,14 @@ public class QuartersServiceImpl implements QuartersService {
     public List<Quarters> queryAll() {
         return quartersMapper.queryAll();
     }
+
+    @Override
+    public void add(Quarters quarters) {
+        quartersMapper.add(quarters);
+    }
+
+    @Override
+    public Quarters queryByQuartersId(int quartersId) {
+        return quartersMapper.queryByQuartersId(quartersId);
+    }
 }

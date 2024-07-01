@@ -2,13 +2,11 @@ package org.du3.ccisp.controller;
 
 import org.du3.ccisp.pojo.Enterprise;
 import org.du3.ccisp.pojo.Quarters;
+import org.du3.ccisp.pojo.User;
 import org.du3.ccisp.service.QuartersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +27,20 @@ public class QuartersController {
     @ResponseBody
     public List<Quarters> queryAll() {
         return quartersService.queryAll();
+    }
+
+    @GetMapping("/query_by_quarters_id")
+    @ResponseBody
+    public Quarters queryByQuartersId(int quartersId) {
+        return quartersService.queryByQuartersId(quartersId);
+    }
+
+    //post请求
+    //@RequestBody 表示接收请求是JSON格式的数据
+    @PostMapping("/add")
+    @ResponseBody
+    public String add(@RequestBody Quarters quarters) {
+        quartersService.add(quarters);
+        return "添加OK";
     }
 }
