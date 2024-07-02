@@ -12,6 +12,7 @@
         <result column="rp_check" property="rpCheck"/>
         <result column="rp_face_location" property="rpFaceLocation"/>
         <result column="rp_work_file" property="rpWorkFile"/>
+        <result column="rp_lnglat" property="rpLnglat"/>
     </resultMap>
 
     <insert id="add" parameterType="RecruitmentProcess">
@@ -21,7 +22,7 @@
 
     <update id="update" parameterType="RecruitmentProcess">
         update ccis.recruitment_process
-        set rp_phase = #{rpPhase}, rp_check = #{rpCheck}, rp_face_location = #{rpFaceLocation}, rp_work_file = #{rpWorkFile}
+        set rp_phase = #{rpPhase}, rp_check = #{rpCheck}, rp_face_location = #{rpFaceLocation}, rp_work_file = #{rpWorkFile}, rp_lnglat = #{rpLnglat}
         where rp_id = #{rpId};
     </update>
 

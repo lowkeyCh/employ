@@ -4,49 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="392284ba-816e-4823-8340-91dc11674a2f" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eedfcbca-c527-4e11-9059-1fdca0e6ac00.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eedfcbca-c527-4e11-9059-1fdca0e6ac00.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eedfcbca-c527-4e11-9059-1fdca0e6ac00/storage_v2/_src_/schema/ccis.ioEuAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eedfcbca-c527-4e11-9059-1fdca0e6ac00/storage_v2/_src_/schema/ccis.ioEuAA.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="392284ba-816e-4823-8340-91dc11674a2f" name="更改" comment="更改">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/common/FileUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/common/FileUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/controller/QuartersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/controller/QuartersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/mapper/QuartersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/mapper/QuartersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/service/QuartersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/service/QuartersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/service/impl/QuartersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/service/impl/QuartersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/QuartersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/QuartersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/QuartersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/QuartersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/pojo/RecruitmentProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/du3/ccisp/pojo/RecruitmentProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RecruitmentProcessMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RecruitmentProcessMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/du3/ccisp/common/FileUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/du3/ccisp/common/FileUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/du3/ccisp/controller/QuartersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/du3/ccisp/controller/QuartersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/du3/ccisp/mapper/QuartersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/du3/ccisp/mapper/QuartersMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/du3/ccisp/service/QuartersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/du3/ccisp/service/QuartersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/du3/ccisp/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/du3/ccisp/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/du3/ccisp/service/impl/QuartersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/du3/ccisp/service/impl/QuartersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/07d4bb41-1688-4f8e-9bda-6bb99bbcde1c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/0e7257cd-696b-4d26-8718-c497773f6593.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/0fc65538-8dd2-4e12-b2f4-626d324945ab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/30e85513-421a-400f-a6da-9fbe5d87b4c5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/30ea4775-194b-473a-8414-1141ed832a08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/3383b96c-cc9e-474c-8691-b0e3048c09b2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/35def093-8629-4a23-902a-f8666f926995.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/3e777eff-40b0-477f-963d-b46194b02785.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/8070e7dd-f3ce-4c5b-9e1b-431136adf9e1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/873c137f-3d1b-48b0-90ca-10dc73363f4b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/8e8140f8-e89b-4af6-9a89-72d801345231.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/9a299f4a-520d-4d69-92bc-be9be86851c8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/b7093d8f-720c-467d-8b5f-c9de04c02e7d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/c1719548-8c50-4665-ac0d-adc69f858471.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/c83132c8-7221-46ce-a463-da3e6c309680.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/cd0d58c6-6810-40bf-a7f2-224cbd018cd3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/d6f9dd8c-3b2b-40bd-8c92-9b7c6b5ccf9e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/d997597d-b933-4894-999c-0d2fdc0f2387.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/ddef53f5-7db8-4fa6-8169-a7bc69581f2a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/f1cb4a57-357e-4b80-88e5-0221adaa5b40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resume/f2dc2fa3-6b9c-4b83-8e30-3f23fad385f9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/du3/ccisp/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/du3/ccisp/controller/UserController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +30,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -99,11 +66,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Projects-web/ccis-web" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Projects-web/ccis-web" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -186,6 +153,10 @@
       <workItem from="1719533928092" duration="2652000" />
       <workItem from="1719661145805" duration="5505000" />
       <workItem from="1719815572026" duration="631000" />
+      <workItem from="1719818255029" duration="3798000" />
+      <workItem from="1719898051307" duration="1509000" />
+      <workItem from="1719903194460" duration="4485000" />
+      <workItem from="1719912082393" duration="728000" />
     </task>
     <servers />
   </component>
@@ -202,7 +173,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

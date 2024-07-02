@@ -61,9 +61,9 @@ public class UserController {
     }
 
     //Delete请求
-    @DeleteMapping(value = "/{user_id}")
+    @GetMapping("/delete_by_user_id")
     @ResponseBody
-    public String delete(@PathVariable("user_id")Integer userId){
+    public String delete(int userId){
         userService.delete(userId);
         return "删除成功";
     }

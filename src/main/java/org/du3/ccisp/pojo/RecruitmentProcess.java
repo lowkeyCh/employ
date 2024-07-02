@@ -18,4 +18,5 @@ public class RecruitmentProcess {
     private String rpCheck;
     private String rpFaceLocation;
     private String rpWorkFile;
+    private String rpLnglat;
 }
